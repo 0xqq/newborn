@@ -4,6 +4,6 @@ package com.jh.learn
  * Hello world!
  *
  */
-object App extends Application {
+object App extends App {
   println( "Hello World!" )
 }

@@ -5,7 +5,11 @@
   <version>1.0-SNAPSHOT</version>
   <inceptionYear>2008</inceptionYear>
   <properties>
-    <scala.version>2.7.0</scala.version>
+    <scala.version>2.11.7</scala.version>
+    <scalabig.version>2.11</scalabig.version>
+    <flink.version>1.5.0</flink.version>
+    <hadoop.version>2.6.0</hadoop.version>
+    <hbase.version>1.2.0</hbase.version>
   </properties>
 
   <repositories>
@@ -42,6 +46,29 @@
       <version>1.2.5</version>
       <scope>test</scope>
     </dependency>
+
+    <!--flink依赖包-->
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-java</artifactId>
+      <version>${flink.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-streaming-java_${scalabig.version}</artifactId>
+      <version>${flink.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-clients_${scalabig.version}</artifactId>
+      <version>${flink.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-connector-wikiedits_${scalabig.version}</artifactId>
+      <version>${flink.version}</version>
+    </dependency>
+    <!--######################################-->
   </dependencies>
 
   <build>
