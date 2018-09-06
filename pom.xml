@@ -6,10 +6,9 @@
   <inceptionYear>2008</inceptionYear>
   <properties>
     <scala.version>2.11.7</scala.version>
-    <scalabig.version>2.11</scalabig.version>
-    <flink.version>1.5.0</flink.version>
-    <hadoop.version>2.6.0</hadoop.version>
-    <hbase.version>1.2.0</hbase.version>
+    <flink.version>1.6.0</flink.version>
+    <!--<hadoop.version>2.6.0</hadoop.version>-->
+    <!--<hbase.version>1.2.0</hbase.version>-->
   </properties>
 
   <repositories>
@@ -50,36 +49,38 @@
     <!--flink依赖包-->
     <dependency>
       <groupId>org.apache.flink</groupId>
-      <artifactId>flink-java</artifactId>
-      <version>${flink.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-streaming-java_${scalabig.version}</artifactId>
-      <version>${flink.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-clients_${scalabig.version}</artifactId>
-      <version>${flink.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-connector-wikiedits_${scalabig.version}</artifactId>
+      <artifactId>flink-scala_2.11</artifactId>
       <version>${flink.version}</version>
     </dependency>
 
-    <!--flink sql的依赖-->
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-core</artifactId>
+      <version>${flink.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>xml-apis</artifactId>
+          <groupId>xml-apis</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-streaming-scala_2.11</artifactId>
+      <version>${flink.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-connector-kafka-0.10_2.11</artifactId>
+      <version>${flink.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-table_2.11</artifactId>
-      <version>1.6.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.flink</groupId>
-      <artifactId>flink-scala_2.11</artifactId>
-      <version>1.6.0</version>
+      <version>${flink.version}</version>
     </dependency>
     <!--######################################-->
   </dependencies>
